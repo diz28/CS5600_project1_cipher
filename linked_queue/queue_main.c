@@ -66,8 +66,10 @@ int main(int argc, char *argv[]) {
 	enqueue(queue, process5);
 	print_queue(process5, ENQUEUE, queue);
 
-	dequeue(queue);
-
+	rm_process = dequeue(queue);
+	print_queue(rm_process, DEQUEUE, queue);
+	rm_process = dequeue(queue);
+	print_queue(rm_process, DEQUEUE, queue);
 	
 	return 0;
 }
