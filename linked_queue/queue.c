@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "queue.h"
 
@@ -52,14 +53,31 @@ void *dequeue(queue_t *queue) {
 	return rm_process;
 }
 
+// print remove process
+void print_proc(process_t *process, char* op_name) {
+	int cmp_res = strncasecmp(op_name, "enqueue", 7);
+	if (cmp_res == 0){
+		printf("[id: %d, name: %s] is enqueued. ", process->id, process->p_name);
+	} else {
+		printf("[id: %d, name: %s] is dequeued. ", process->id, process->p_name);
+	}
+}
+
 // print the queue
-void print_queue(queue_t *queue) {
+void print_queue(process_t *proc, char *op_name, queue_t *queue) {
 	node_t *current = queue->head;
-	printf("Queue: ");
+	printf("%s: ", op_name);
+
+	print_proc(proc, op_name);
+
 	while (current != NULL) {
 		process_t *cur_proc = current->data; 
-		printf("%d ", cur_proc->id);
+		printf("[id: %d, name: %s] ", cur_proc->id, cur_proc->p_name);
 		current = current->next;
+	}
+	if (queue->head == NULL) {
+		printf("[Empty]");
 	}
 	printf("\n");
 }
+

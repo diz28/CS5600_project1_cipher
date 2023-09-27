@@ -30,4 +30,4 @@ void enqueue(queue_t *queue, void *element);
 
 void *dequeue(queue_t *queue);
 
-void print_queue(queue_t *queue);
+void print_queue(process_t* proc, char* op_name, queue_t* queue);
