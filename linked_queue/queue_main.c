@@ -10,6 +10,9 @@ char *DEQUEUE = "Dequeue";
 
 int main(int argc, char *argv[]) {
 
+	// encoding/decoding
+    int coder = 0;
+
 	// initilize the queue
 	queue_t *queue = queue_init();
 
@@ -39,28 +42,28 @@ int main(int argc, char *argv[]) {
 
 
 	enqueue(queue, process1);
-	print_queue(process1, ENQUEUE, queue);
+	print_queue(process1, ENQUEUE, queue, coder);
 	enqueue(queue, process2);
-	print_queue(process2, ENQUEUE, queue);
+	print_queue(process2, ENQUEUE, queue, coder);
 	enqueue(queue, process3);
-	print_queue(process3, ENQUEUE, queue);
+	print_queue(process3, ENQUEUE, queue, coder);
 	
 	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
 	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
 	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
 	
 	enqueue(queue, process4);
-	print_queue(process4, ENQUEUE, queue);
+	print_queue(process4, ENQUEUE, queue, coder);
 	enqueue(queue, process5);
-	print_queue(process5, ENQUEUE, queue);
+	print_queue(process5, ENQUEUE, queue, coder);
 
 	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
 	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
 	
 	return 0;
 }

@@ -5,6 +5,10 @@
 #include <string.h>
 
 #include "queue.h"
+#include "../cipher/caesar.h"
+
+// caesar cipher key
+int key = 3;
 
 // initialize the queue
 queue_t *queue_init() {	
@@ -54,21 +58,27 @@ void *dequeue(queue_t *queue) {
 }
 
 // print remove process
-void print_proc(process_t *process, char* op_name) {
+void print_proc(process_t *process, char* op_name, int coder) {
 	int cmp_res = strncasecmp(op_name, "enqueue", 7);
 	if (cmp_res == 0){
 		printf("[id: %d, name: %s] is enqueued. ", process->id, process->p_name);
+		if (coder) {
+			encode(process->p_name, key);
+		}
 	} else {
+		if (coder) {
+			decode(process->p_name, key);
+		}
 		printf("[id: %d, name: %s] is dequeued. ", process->id, process->p_name);
 	}
 }
 
 // print the queue
-void print_queue(process_t *proc, char *op_name, queue_t *queue) {
+void print_queue(process_t* proc, char* op_name, queue_t* queue, int coder) {
 	node_t *current = queue->head;
 	printf("%s: ", op_name);
 
-	print_proc(proc, op_name);
+	print_proc(proc, op_name, coder);
 
 	while (current != NULL) {
 		process_t *cur_proc = current->data; 
