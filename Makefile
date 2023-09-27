@@ -1,16 +1,23 @@
 
 CC = gcc
-
+CFLAGS = -Wall
 
 all:
-	$(CC) -Wall ./cipher/caesar_main.c ./cipher/caesar.c -o caesar
-	$(CC) -Wall ./linked_queue/queue_main.c ./linked_queue/queue.c ./cipher/caesar.c -o queue
-	$(CC) -Wall ./cipher_linked_queue/main.c ./cipher/caesar.c ./linked_queue/queue.c -o ciphered_queue
+	$(CC) $(CFLAGS) ./cipher/caesar_main.c ./cipher/caesar.c -o caesar
+	$(CC) $(CFLAGS) ./linked_queue/queue_main.c ./linked_queue/queue.c ./cipher/caesar.c -o queue
+	$(CC) $(CFLAGS) ./cipher_linked_queue/main.c ./cipher/caesar.c ./linked_queue/queue.c -o ciphered_queue
 
-exec:
-	./queue
+caesar:
+	$(CC) $(CFLAGS) ./cipher/caesar_main.c ./cipher/caesar.c -o caesar
+	
+queue:
+	$(CC) $(CFLAGS) ./linked_queue/queue_main.c ./linked_queue/queue.c ./cipher/caesar.c -o queue
+	
+ciphered_queue:
+	$(CC) $(CFLAGS) ./cipher_linked_queue/main.c ./cipher/caesar.c ./linked_queue/queue.c -o ciphered_queue
 
 clean:
 	rm -rf caesar
 	rm -rf queue
 	rm -rf ciphered_queue
+
