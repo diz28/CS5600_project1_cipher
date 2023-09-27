@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "queue.h"
 
@@ -52,5 +53,6 @@ int main(int argc, char *argv[]) {
 	printf("before print queue");
 	print_queue(queue);
 	
+	free(queue);
 	return 0;
 }

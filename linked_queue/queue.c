@@ -17,7 +17,7 @@ queue_t *queue_init() {
 node_t *node_init(void *data) {
 	// allocate space for the new node
 	node_t *node_new = (node_t*)malloc(sizeof(node_t));
-	node_new->data = (process_t*)data;
+	node_new->data = data;
 	node_new->next = NULL;
 	return node_new;
 }
@@ -42,7 +42,7 @@ void *dequeue(queue_t *queue) {
 	}
 	// remove the first node in queue by pointing the head to the next node
 	node_t *tmp = queue->head;
-	process_t *rm_process = tmp->data;
+	void *rm_process = tmp->data;
 	queue->head = queue->head->next;
 	// if queue is empty, set back to null as well
 	if (queue->head == NULL) {
