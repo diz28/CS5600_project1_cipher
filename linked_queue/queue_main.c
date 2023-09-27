@@ -32,19 +32,19 @@ int main(int argc, char *argv[]) {
 	process_t *rm_process = (process_t *)malloc(sizeof(process_t));
 
 	process1->id = 1001;
-	strcpy(process1->p_name, "p_one");
+	strcpy(process1->p_name, "A");
 
 	process2->id = 1002;
-	strcpy(process2->p_name, "p_two");
+	strcpy(process2->p_name, "B");
 	
 	process3->id = 1003;
-	strcpy(process3->p_name, "p_three");
+	strcpy(process3->p_name, "C");
 	
 	process4->id = 1004;
-	strcpy(process4->p_name, "p_four");
+	strcpy(process4->p_name, "D");
 	
 	process5->id = 1005;
-	strcpy(process5->p_name, "p_five");
+	strcpy(process5->p_name, "E");
 
 
 	enqueue(queue, process1);
