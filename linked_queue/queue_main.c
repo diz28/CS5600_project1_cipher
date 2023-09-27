@@ -5,15 +5,6 @@
 
 #include "queue.h"
 
-
-/* 
- * main function for linked queue
- */
-//void queue_init();
-
-//void enqueue(queue_t *queue, void *element);
-
-//void *dequeue(queue_t *queue);
 char *ENQUEUE = "Enqueue";
 char *DEQUEUE = "Dequeue";
 
