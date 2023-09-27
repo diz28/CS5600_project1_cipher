@@ -6,7 +6,7 @@
 
 typedef struct process{
 	int id;
-	char *p_name;
+	char p_name[16];
 } process_t;
 
 

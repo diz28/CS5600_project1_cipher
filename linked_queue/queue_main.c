@@ -16,32 +16,36 @@
 //void *dequeue(queue_t *queue);
 
 int main(int argc, char *argv[]) {
-	
-	printf("before queue_init");
+
+	printf("before queue_init in main\n");
 	// initilize the queue
 	queue_t *queue = queue_init();
 
 	// create process
-	process_t process1;
-	process_t process2;
-	process_t process3;
-	process_t process4;
-	process_t process5;
+	process_t *process1 = (process_t *)malloc(sizeof(process_t));
+	process_t *process2 = (process_t *)malloc(sizeof(process_t));
+	process_t *process3 = (process_t *)malloc(sizeof(process_t));
+	process_t *process4 = (process_t *)malloc(sizeof(process_t));
+	process_t *process5 = (process_t *)malloc(sizeof(process_t));
 
-	process1.id = 1001;
-	strcpy(process1.p_name, "p_one");
+	printf("after process initialization\n");
+
+	process1->id = 1001;
+	strcpy(process1->p_name, "p_one");
 	
-	process2.id = 1002;
-	strcpy(process2.p_name, "p_two");
+	process2->id = 1002;
+	strcpy(process2->p_name, "p_two");
 	
-	process3.id = 1003;
-	strcpy(process3.p_name, "p_three");
+	process3->id = 1003;
+	strcpy(process3->p_name, "p_three");
 	
-	process4.id = 1004;
-	strcpy(process4.p_name, "p_four");
+	process4->id = 1004;
+	strcpy(process4->p_name, "p_four");
 	
-	process5.id = 1005;
-	strcpy(process5.p_name, "p_five");
+	process5->id = 1005;
+	strcpy(process5->p_name, "p_five");
+
+	printf("after assigning processes");
 
 	printf("before enqueue");
 	enqueue(queue, &process1);
@@ -50,7 +54,7 @@ int main(int argc, char *argv[]) {
 	enqueue(queue, &process4);
 	enqueue(queue, &process5);
 
-	printf("before print queue");
+	printf("before print queue\n");
 	print_queue(queue);
 	
 	free(queue);
