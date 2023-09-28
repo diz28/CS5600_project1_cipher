@@ -1,4 +1,10 @@
 
+/*
+ * Di Zhang
+ * CS5660 - Computer Systems
+ * Sep 26, 2023
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -8,10 +14,14 @@
 char *ENQUEUE = "Enqueue";
 char *DEQUEUE = "Dequeue";
 
+/* 
+ * main function for queue: creating all the processes and 
+ * printing all the enqueue and dequeue
+ */
 int main(int argc, char *argv[]) {
 
 	// encoding/decoding
-    int coder = 0;
+	int coder = 0;
 
 	// initilize the queue
 	queue_t *queue = queue_init();

@@ -1,4 +1,10 @@
 
+/*
+ * Di Zhang
+ * CS5660 - Computer Systems
+ * Sep 26, 2023
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -9,10 +15,14 @@
 char *ENQUEUE = "Enqueue";
 char *DEQUEUE = "Dequeue";
 
+/* 
+ * main function for ciphered queue: create all the processes and 
+ * print all the ciphered enqueue and dequeue
+ */
 int main(int argc, char *argv[]) {
 
-    // encoding/decoding
-    int coder = 1;
+	// encoding/decoding
+	int coder = 1;
 
 	// initilize the queue
 	queue_t *queue = queue_init();
@@ -31,13 +41,13 @@ int main(int argc, char *argv[]) {
 
 	process_b->id = 1002;
 	strcpy(process_b->p_name, "B");
-	
+
 	process_c->id = 1003;
 	strcpy(process_c->p_name, "C");
-	
+
 	process_d->id = 1004;
 	strcpy(process_d->p_name, "D");
-	
+
 	process_e->id = 1005;
 	strcpy(process_e->p_name, "E");
 
@@ -46,19 +56,19 @@ int main(int argc, char *argv[]) {
 
 	enqueue(queue, process_b);
 	print_queue(process_b, ENQUEUE, queue, coder);
-	
-    enqueue(queue, process_c);
+
+	enqueue(queue, process_c);
 	print_queue(process_c, ENQUEUE, queue, coder);
-	
-	rm_process = dequeue(queue);
-	print_queue(rm_process, DEQUEUE, queue, coder);
 
 	rm_process = dequeue(queue);
 	print_queue(rm_process, DEQUEUE, queue, coder);
 
 	rm_process = dequeue(queue);
 	print_queue(rm_process, DEQUEUE, queue, coder);
-	
+
+	rm_process = dequeue(queue);
+	print_queue(rm_process, DEQUEUE, queue, coder);
+
 	enqueue(queue, process_d);
 	print_queue(process_d, ENQUEUE, queue, coder);
 
@@ -70,6 +80,6 @@ int main(int argc, char *argv[]) {
 
 	rm_process = dequeue(queue);
 	print_queue(rm_process, DEQUEUE, queue, coder);
-	
+
 	return 0;
 }

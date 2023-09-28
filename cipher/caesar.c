@@ -1,4 +1,9 @@
 
+/*
+ * Di Zhang
+ * CS5660 - Computer Systems
+ * Sep 26, 2023
+ */
 
 #include<stdio.h>
 #include<ctype.h>
@@ -20,10 +25,10 @@ void toUpperCase(char *text) {
  * encode function: encode plain text based on the key
  */
 void encode(char *plaintext, int key) {
-	
+
 	// convert plaintext to upper case
 	toUpperCase(plaintext);
-	
+
 	// encode plaintext based on the key
 	for (int i = 0; plaintext[i] != '\0'; i++) {
 		int decoder = (int)plaintext[i] + key;
@@ -40,7 +45,7 @@ void encode(char *plaintext, int key) {
 void decode(char *plaintext, int key) {
 	// convert plaintext to upper case
 	toUpperCase(plaintext);
-	
+
 	// encode plaintext based on the key
 	for (int i = 0; plaintext[i] != '\0'; i++) {
 		int decoder = (int)plaintext[i] - key;

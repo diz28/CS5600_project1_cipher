@@ -1,4 +1,9 @@
 
+/*
+ * Di Zhang
+ * CS5660 - Computer Systems
+ * Sep 26, 2023
+ */
 
 /* 
  * header file
@@ -14,7 +19,6 @@ typedef struct node{
 	void *data;
 	struct node *next;
 } node_t;
-
 
 typedef struct queue{
 	node_t *head;
