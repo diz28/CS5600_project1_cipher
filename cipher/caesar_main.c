@@ -17,7 +17,6 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	
-
 	printf("message before encoding: %s\nkey: %s\n", argv[2], argv[3]);
 
 	char zero = '0'; 
